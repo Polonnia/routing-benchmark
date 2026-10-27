@@ -1,7 +1,8 @@
 ## 安装
 
 ```bash
-cd fma_repro
+git clone https://github.com/Polonnia/routing-benchmark.git
+cd routing-benchmark
 pip install -r requirements.txt
 ```
 
