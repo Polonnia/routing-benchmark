@@ -1,17 +1,9 @@
-# 可靠路径实验框架
-
-用于在交通网络上复现和对比可靠路径算法的通用实验框架。
-
-算法名称、路网数据、起点终点、链路波动参数和出行时间预算均通过命令行参数指定。新增算法只需在 `src/algorithms.py` 中注册，无需修改实验入口。
-
 ## 安装
 
 ```bash
 cd fma_repro
 pip install -r requirements.txt
 ```
-
-要求 Python 3.10+，仅依赖 NumPy。
 
 ## 快速开始
 
@@ -70,11 +62,6 @@ python run_experiments.py \
     --network-file data/Anaheim/Anaheim_network.csv \
     --n-od 10
 
-# 预算扫描（类似 Fig. 7）
-python run_experiments.py \
-    --algorithm fma --network Anaheim \
-    --t-factor 0.9 0.95 1.0 1.05 1.1 1.15 1.2 1.25 1.3
-
 # 使用贪心策略改进
 python run_experiments.py --algorithm fma --mode greedy --network Anaheim
 ```
@@ -90,8 +77,6 @@ python run_experiments.py --algorithm fma --mode greedy --network Anaheim
 | `results.md` | 便于阅读的下界结果汇总。 |
 | `config.json` | 本次实验的完整命令行配置。 |
 | `environment.json` | Python、NumPy 和平台信息。 |
-
-结果中的 **下界** 是算法保证的到点概率 `1 - g`，不计算经验概率。
 
 ## 路网文件格式
 
